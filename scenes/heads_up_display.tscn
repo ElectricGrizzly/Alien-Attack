@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0pig7gcjw0xp"]
+
+[ext_resource type="FontFile" uid="uid://breu2bmf1tmde" path="res://assets/font/Kenney Blocks.ttf" id="1_5cel8"]
+[ext_resource type="Script" path="res://scripts/heads_up_display.gd" id="1_nsrf6"]
+[ext_resource type="Texture2D" uid="uid://df7uuxk4pxg2m" path="res://assets/textures/orb.png" id="3_7gvlc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uqqj4"]
+font = ExtResource("1_5cel8")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_71f6b"]
+font = ExtResource("1_5cel8")
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_napjr"]
+font = ExtResource("1_5cel8")
+font_size = 64
+
+[node name="HeadsUpDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nsrf6")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 370.0
+offset_bottom = 82.0
+text = "SCORE:"
+label_settings = SubResource("LabelSettings_uqqj4")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 82.0
+text = "0"
+label_settings = SubResource("LabelSettings_uqqj4")
+
+[node name="LivesLabel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 78.0
+offset_right = 127.0
+offset_bottom = 196.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_7gvlc")
+
+[node name="LivesCross" type="Label" parent="."]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 105.0
+offset_right = 125.0
+offset_bottom = 153.0
+text = "X"
+label_settings = SubResource("LabelSettings_71f6b")
+
+[node name="LivesRemaining" type="Label" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 60.0
+offset_right = 159.0
+offset_bottom = 156.0
+text = "0"
+label_settings = SubResource("LabelSettings_napjr")
